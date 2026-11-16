@@ -16,6 +16,7 @@ import logo_dark from "./logo_dark.png";
 import mail_icon from "./mail_icon.png";
 import mail_icon_dark from "./mail_icon_dark.png";
 import profile_img from "./profile-img.jpg";
+import profile_img_about from "./profile-img2.jpg";
 import download_icon from "./download-icon.png";
 import hand_icon from "./hand-icon.png";
 import header_bg_color from "./header-bg-color.png";
@@ -78,6 +79,7 @@ export const assets = {
   mail_icon,
   mail_icon_dark,
   profile_img,
+  profile_img_about,
   download_icon,
   hand_icon,
   header_bg_color,
@@ -121,92 +123,125 @@ export const assets = {
 
 export const projectData = [
   {
-    title: "Juneli(Ecom)",
-    description: " Python Django Sqlite",
+    title: "Blogo",
+    category: "FULL-STACK",
+    description:
+      "A modern blog with authentication, profile management, rich-text publishing, search, likes, threaded comments, author dashboards, media uploads, and pagination.",
+    stack: ["React", "TypeScript", "MongoDB", "Express", "Node.js", "AWS"],
     bgImage: "/work-1.png",
-    link: "https://github.com/ajaysth/juneli-django.git",
-  },
-  {
-    title: "Foodey(Ecom)",
-    description: "HTML Css php",
-    bgImage: "/work-2.png",
-    link: "https://github.com/ajaysth/food-ordering-system.git",
-  },
-  {
-    title: "My Portfolio",
-    description: "Next JS",
-    bgImage: "/work-3.png",
-    link: "https://github.com/ajaysth/myPortfolio-nextjs.git",
+    link: "https://github.com/ajayxth/Mern-Blog-Proj8",
   },
   {
     title: "Antique Nepal",
+    category: "E-COMMERCE",
     description:
-      "This project was done collaboratively during my internship Program at GoingGenius Group of Companies",
-    bgImage: "/work-3.png",
-    link: "https://antique-nepal-khaki.vercel.app/",
+      "An online store for sustainable hemp goods, with product listings and cart functionality, developed during my internship.",
+    stack: ["Next.js", "Clerk", "Prisma", "Supabase"],
+    bgImage: "/work-2.png",
+    link: "https://github.com/GoingGeniusGroup/antique-nepal",
   },
   {
     title: "Brainwaves",
+    category: "WEB APPLICATION",
     description:
-      "This project was done during my internship Program at GoingGenius Group of Companies",
+      "A full-featured blog platform supporting post creation, editing, and user authentication, backed by a relational data model.",
+    stack: ["Next.js", "Prisma", "Supabase"],
     bgImage: "/work-3.png",
-    link: "https://brainwavess-tawny.vercel.app/",
+    link: "https://github.com/ajaysth/The-Blog-Platform-BRAINWAVES.git",
+  },
+  {
+    title: "AI Image Generator",
+    category: "AI APPLICATION",
+    description:
+      "An AI image-generation app using Stable Diffusion XL, with prompt input, live image previews, and downloads.",
+    stack: ["React", "TypeScript", "Express", "Hugging Face API"],
+    bgImage: "/work-4.png",
+    link: "https://github.com/ajayxth/ai-img-gen.git",
+  },
+  {
+    title: "GPT-3 Landing Page",
+    category: "FRONTEND",
+    description:
+      "A responsive AI product landing page with reusable components and mobile-friendly navigation.",
+    stack: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    bgImage: "/work-1.png",
+    link: "https://gpt-3-design-sigma.vercel.app",
+  },
+  {
+    title: "MERN Auth System",
+    category: "FULL-STACK",
+    description:
+      "A responsive authentication system with reusable components and a modern, mobile-friendly interface.",
+    stack: ["React", "TypeScript", "MongoDB", "Express", "Node.js"],
+    bgImage: "/work-2.png",
+    link: "https://github.com/ajaysth/Auth-System-MERN",
   },
 ];
 
 export const skillData = [
   {
     icon: assets.code,
-    title: "Programming languages",
-    description: "Java, C, Javascript, React, NextJs, php, Python, Django ",
+    title: "Programming Languages",
+    description: "JavaScript, TypeScript",
+    link: "",
+  },
+  {
+    icon: assets.project,
+    title: "Frameworks & Libraries",
+    description:
+      "React.js, Next.js, Node.js, Express.js, Tailwind CSS, Bootstrap, Redux Toolkit",
     link: "",
   },
   {
     icon: assets.db,
-    title: "Databases",
-    description: "MySql, Sqlite, Oracle",
+    title: "Databases & ORMs",
+    description: "MongoDB, MySQL, SQLite, Supabase, Prisma ORM, Mongoose",
     link: "",
   },
   {
     icon: assets.tool,
-    title: "Tools",
-    description: "Github, Slack, Discord, Microsoft Office",
+    title: "Development Tools",
+    description: "Git, GitHub, Vercel, VS Code, Antigravity, Postman",
     link: "",
   },
   {
-    icon: assets.os,
-    title: "Operating Systems",
-    description: "Windows, Linux(Pop OS)",
+    icon: assets.code,
+    title: "Markup & Styling",
+    description: "HTML5, CSS3, Tailwind CSS, SCSS",
+    link: "",
+  },
+  {
+    icon: assets.project,
+    title: "Management & Spoken Languages",
+    description: "Jira, Agile, Scrum, Figma, Nepali (native), English",
     link: "",
   },
 ];
 
 export const infoList = [
   {
-    icon: assets.edu,
-    iconDark: assets.edu_icon_dark,
-    title: "Prev Education",
-    description: "SEE and +2 (Sainik Awasiya Mahavidyalaya)",
+    title: "Bachelor of Computer Applications (BCA)",
+    duration: "Jun 2023 - Present",
+    institution: "Everest College",
+    location: "Thapathali, Kathmandu",
   },
   {
-    icon: assets.edu,
-    iconDark: assets.edu_icon_dark,
-    title: "Ongoing Education",
-    description: "BCA (Everest College)",
+    title: "Higher Secondary Education (+2)",
+    duration: "May 2020 - Apr 2022",
+    institution: "Sainik Awasiya Mahavidyalaya",
+    location: "Sallaghari, Bhaktapur",
   },
   {
-    icon: assets.project,
-    iconDark: assets.project_icon_dark,
-    title: "Projects",
-    description: "Built more than 3 projects",
+    title: "Secondary Education Examination (SEE)",
+    duration: "Apr 2014 - Mar 2019",
+    institution: "Sainik Awasiya Mahavidyalaya",
+    location: "Sallaghari, Bhaktapur",
   },
 ];
 
 export const toolsData = [
-  assets.vscode_icon,
-  assets.github_icon,
-  assets.linux_icon,
-  assets.ms_icon,
-  assets.git,
-  assets.slack_icon,
+  { name: "VS Code", icon: assets.vscode_icon },
+  { name: "GitHub", icon: assets.github_icon },
+  { name: "Vercel", icon: assets.web_icon },
+  { name: "Figma", icon: assets.figma },
 ];

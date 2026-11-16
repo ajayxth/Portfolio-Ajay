@@ -1,15 +1,31 @@
 @import "tailwindcss";
 
-*{
-    font-family: Outfit;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
-.font-ovo{
-    font-family : Ovo;
+body {
+  background-color: #fafafa;
+  color: #18181b;
 }
 
-.font-outfit{
+.font-outfit {
   font-family: Outfit;
+}
+
+.hero-grid {
+  background-image: radial-gradient(rgba(24, 24, 27, 0.1) 0.65px, transparent 0.65px);
+  background-position: center;
+  background-size: 18px 18px;
+}
+
+.section-kicker {
+  color: #a1a1aa;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
 }
 
 .lightHover:hover {

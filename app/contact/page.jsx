@@ -1,9 +1,6 @@
 "use client";
-import React from "react";
-import { assets } from "@/assets/assets";
-import Image from "next/image";
 import { useState } from "react";
-import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -32,72 +29,86 @@ const Contact = () => {
   };
 
   return (
-    <div
+    <section
       id="contact"
-      className='w-full px-[12%] py-10 scroll-mt-10 bg-[url("/bgo.jpg")] bg-no-repeat bg-center bg-[length:90%_auto] '
+      className="scroll-mt-20 bg-zinc-50 px-5 py-20 sm:py-24"
     >
-      <h4 className="text-center mb-2 text-lg">Connect With Me</h4>
-      <h2 className="text-center text-5xl ">Get in touch</h2>
-
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12">
-        I'd love to hear from you. If u have any queries, please do down the
-        below.
-      </p>
-
-      <form
-        onSubmit={onSubmit}
-        className="max-w-2xl mx-auto bg-white dark:bg-gray-300 p-8 rounded-2xl shadow-lg"
-      >
-        {/* Name & Email Fields */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Your Name"
-            required
-            className="w-full p-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Your Email"
-            required
-            className="w-full p-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-          />
+      <div className="mx-auto max-w-2xl">
+        <div className="mb-8 text-center">
+          <p className="section-kicker">CONNECT WITH ME</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+            Get in touch
+          </h2>
+          <p className="mx-auto mt-3 max-w-md text-base leading-7 text-zinc-500">
+            I&apos;d love to hear from you. Send me a message and I&apos;ll get
+            back to you as soon as I can.
+          </p>
         </div>
 
-        {/* Message Field */}
-        <textarea
-          name="message"
-          rows="6"
-          placeholder="Enter Your Message"
-          required
-          className="w-full p-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition mb-6 resize-none"
-        ></textarea>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 
-                        hover:from-green-600 hover:via-green-700 hover:to-green-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg 
-                        transform hover:-translate-y-1 transition-all duration-300"
+        <form
+          onSubmit={onSubmit}
+          className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-900/5 sm:p-7"
         >
-          Submit Now
-          <Image
-            src={assets.right_arrow_white}
-            alt="arrow"
-            className="w-4 h-4"
-          />
-        </button>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <label className="sr-only" htmlFor="contact-name">
+              Your name
+            </label>
+            <input
+              id="contact-name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              autoComplete="name"
+              required
+              className="w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3.5 py-2.5 text-base text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-100"
+            />
+            <label className="sr-only" htmlFor="contact-email">
+              Your email
+            </label>
+            <input
+              id="contact-email"
+              type="email"
+              name="email"
+              placeholder="Your email"
+              autoComplete="email"
+              required
+              className="w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3.5 py-2.5 text-base text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-100"
+            />
+          </div>
 
-        {/* Result Message */}
-        {result && (
-          <p className="mt-4 text-center text-green-700 dark:text-green-700">
-            {result}
-          </p>
-        )}
-      </form>
-    </div>
+          <label className="sr-only" htmlFor="contact-message">
+            Your message
+          </label>
+          <textarea
+            id="contact-message"
+            name="message"
+            rows="5"
+            placeholder="Write your message..."
+            required
+            className="mt-3 w-full resize-y rounded-lg border border-zinc-200 bg-zinc-50 px-3.5 py-2.5 text-base text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-emerald-500 focus:bg-white focus:ring-2 focus:ring-emerald-100"
+          />
+
+          <div className="mt-4 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+            <button
+              type="submit"
+              className="inline-flex items-center gap-2 rounded-full bg-emerald-700 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+            >
+              Send message
+              <ArrowRight aria-hidden="true" size={14} />
+            </button>
+            {result && (
+              <p
+                role="status"
+                aria-live="polite"
+                className="text-sm text-emerald-700"
+              >
+                {result}
+              </p>
+            )}
+          </div>
+        </form>
+      </div>
+    </section>
   );
 };
 

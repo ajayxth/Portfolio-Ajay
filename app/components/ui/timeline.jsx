@@ -1,103 +1,52 @@
 "use client";
-import { GraduationCap } from "lucide-react";
+
 import { motion } from "framer-motion";
 
-export const Timeline = () => {
-  const timelineData = [
-    {
-      id: 3,
-      type: "education",
-      title: "BCA",
-      duration: "2021 - Present",
-      college: "Everest College, Thapathali Kathmandu",
-      icon: <GraduationCap className="w-5 h-5" />,
-    },
-    {
-      id: 2,
-      type: "education",
-      title: "+2",
-      duration: "2018 - 2021",
-      college: "Sainik Awasiya Magavidyalaya, Sallaghari bhaktapur",
-      icon: <GraduationCap className="w-5 h-5" />,
-    },
-    {
-      id: 1,
-      type: "education",
-      title: "SEE",
-      duration: "2014-2018",
-      college: "Sainik Awasiya Magavidyalaya, Sallaghari Bhaktapur",
-      icon: <GraduationCap className="w-5 h-5" />,
-    },
-  ];
-
+export const Timeline = ({ data }) => {
   return (
-    <div className="w-full bg-transparent font-sans py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-medium text-center mb-24 tracking-tight text-black"
-        >
-          Educational Journey
-        </motion.h2>
+    <section
+      id="education"
+      className="scroll-mt-20 border-y border-zinc-100 bg-white py-20 sm:py-24"
+    >
+      <div className="mx-auto max-w-4xl px-5 lg:px-8">
+        <div className="mb-9 text-center">
+          <p className="section-kicker">ACADEMIC BACKGROUND</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+            Education
+          </h2>
+        </div>
 
-        <div className="relative">
-          {/* Subtle monochrome line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-neutral-200 dark:bg-neutral-800" />
+        <div className="relative space-y-3">
+          <div className="absolute bottom-5 left-[11px] top-5 w-px bg-zinc-200" />
 
-          {timelineData.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
+          {data.map((item, index) => (
+            <motion.article
+              key={item.title}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.15,
-                ease: "easeOut",
-              }}
-              className={`relative flex items-center mb-16 ${
-                index % 2 === 0 ? "justify-start" : "justify-end"
-              } group`}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.35, delay: index * 0.06 }}
+              className="relative pl-8"
             >
-              {/* Ultra-minimalist node */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white dark:bg-neutral-950 border-2 border-neutral-300 dark:border-neutral-700 flex items-center justify-center z-10 transition-all duration-500 group-hover:border-neutral-900 dark:group-hover:border-neutral-300 shadow-sm">
-                <div className="w-1.5 h-1.5 rounded-full bg-transparent transition-colors duration-500 group-hover:bg-neutral-900 dark:group-hover:bg-neutral-300" />
-              </div>
-
-              {/* Monochrome Premium Card */}
-              <div
-                className={`w-5/12 ${index % 2 === 0 ? "pr-8 md:pr-14" : "pl-8 md:pl-14"}`}
-              >
-                <div className="bg-white dark:bg-neutral-900/50 border border-neutral-200/60 dark:border-neutral-800 p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.02)] dark:shadow-[0_4px_20px_rgb(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.4)] transition-all duration-500 mb-0">
-                  <div className="relative flex flex-col gap-5 z-10">
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-neutral-50 dark:bg-neutral-800 border border-neutral-100 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 shrink-0">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl md:text-2xl font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight">
-                          {item.title}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80">
-                      <span className="inline-block px-3 py-1 bg-neutral-100/80 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-400 text-xs font-semibold rounded-md tracking-wider uppercase mb-3">
-                        {item.duration}
-                      </span>
-                      <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-normal">
-                        {item.college}
-                      </p>
-                    </div>
-                  </div>
+              <span className="absolute left-[5px] top-6 h-3.5 w-3.5 rounded-full border-[3px] border-white bg-zinc-800 ring-1 ring-zinc-300" />
+              <div className="rounded-xl border border-zinc-200 bg-zinc-50/70 p-4 transition-colors hover:bg-white sm:px-5">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <span className="w-fit rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold tracking-wide text-amber-800">
+                    {item.duration}
+                  </span>
+                  <span className="text-sm text-zinc-500">{item.location}</span>
                 </div>
+                <h3 className="mt-2 text-base font-semibold text-zinc-900 sm:text-lg">
+                  {item.title}
+                </h3>
+                <p className="mt-1 text-sm text-zinc-500">
+                  {item.institution}
+                </p>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
