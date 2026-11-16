@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -27,7 +28,11 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0, y: -12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      data-motion-reveal=""
       className={`fixed inset-x-0 top-0 z-50 border-b border-zinc-200/70 bg-white/90 backdrop-blur-xl transition-shadow ${
         isScrolled ? "shadow-sm shadow-zinc-900/5" : ""
       }`}
@@ -80,27 +85,34 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {isMenuOpen && (
-        <div
-          id="mobile-navigation"
-          className="border-t border-zinc-100 bg-white px-5 py-3 shadow-lg shadow-zinc-900/5 md:hidden"
-        >
-          <ul className="mx-auto flex max-w-6xl flex-col">
-            {navLinks.map(({ label, id }) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  onClick={closeMenu}
-                  className="block rounded-lg px-3 py-2.5 text-base font-medium text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-zinc-950"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </header>
+      <AnimatePresence initial={false}>
+        {isMenuOpen && (
+          <motion.div
+            id="mobile-navigation"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            data-motion-reveal=""
+            className="border-t border-zinc-100 bg-white px-5 py-3 shadow-lg shadow-zinc-900/5 md:hidden"
+          >
+            <ul className="mx-auto flex max-w-6xl flex-col">
+              {navLinks.map(({ label, id }) => (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    onClick={closeMenu}
+                    className="block rounded-lg px-3 py-2.5 text-base font-medium text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-zinc-950"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 };
 

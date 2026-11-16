@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { projectData } from "@/assets/assets";
+import { Reveal } from "../components/ui/Reveal";
 
 const Project = () => {
   return (
     <section id="project" className="scroll-mt-20 bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="mb-9 text-center">
+        <Reveal className="mb-9 text-center">
           <p className="section-kicker">MY PORTFOLIO</p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
             My Projects
@@ -17,17 +18,19 @@ const Project = () => {
             Selected projects from my software development work and independent
             portfolio.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {projectData.map((project) => (
-            <a
+          {projectData.map((project, index) => (
+            <Reveal
+              as="a"
               key={project.title}
+              delay={index * 0.06}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`View ${project.title} project`}
-              className="group overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
+              className="group block overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
             >
               <div className="relative aspect-[1.65/1] overflow-hidden bg-zinc-100">
                 <Image
@@ -66,7 +69,7 @@ const Project = () => {
                   ))}
                 </ul>
               </div>
-            </a>
+            </Reveal>
           ))}
         </div>
       </div>

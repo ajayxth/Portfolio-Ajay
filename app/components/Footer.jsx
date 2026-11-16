@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Mail } from "lucide-react";
 import { assets } from "@/assets/assets";
+import { Reveal } from "./ui/Reveal";
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/ajaysth", icon: assets.github_icon },
@@ -24,7 +25,7 @@ const socialLinks = [
 const Footer = () => {
   return (
     <footer className="border-t border-zinc-200 bg-white px-5 py-9">
-      <div className="mx-auto flex max-w-6xl flex-col items-center text-center">
+      <Reveal className="mx-auto flex max-w-6xl flex-col items-center text-center">
         <a
           href="#home"
           className="text-lg font-semibold tracking-tight text-zinc-900"
@@ -63,7 +64,7 @@ const Footer = () => {
         <p className="mt-5 text-xs text-zinc-500">
           &copy; 2025 Ajay Shrestha. All rights reserved.
         </p>
-      </div>
+      </Reveal>
     </footer>
   );
 };

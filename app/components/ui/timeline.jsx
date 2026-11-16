@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { Reveal } from "./Reveal";
 
 export const Timeline = ({ data }) => {
   return (
@@ -9,23 +7,21 @@ export const Timeline = ({ data }) => {
       className="scroll-mt-20 border-y border-zinc-100 bg-white py-20 sm:py-24"
     >
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
-        <div className="mb-9 text-center">
+        <Reveal className="mb-9 text-center">
           <p className="section-kicker">ACADEMIC BACKGROUND</p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
             Education
           </h2>
-        </div>
+        </Reveal>
 
         <div className="relative space-y-3">
           <div className="absolute bottom-5 left-[11px] top-5 w-px bg-zinc-200" />
 
           {data.map((item, index) => (
-            <motion.article
+            <Reveal
+              as="article"
               key={item.title}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.35, delay: index * 0.06 }}
+              delay={index * 0.06}
               className="relative pl-8"
             >
               <span className="absolute left-[5px] top-6 h-3.5 w-3.5 rounded-full border-[3px] border-white bg-zinc-800 ring-1 ring-zinc-300" />
@@ -43,7 +39,7 @@ export const Timeline = ({ data }) => {
                   {item.institution}
                 </p>
               </div>
-            </motion.article>
+            </Reveal>
           ))}
         </div>
       </div>

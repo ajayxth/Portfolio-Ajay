@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { BriefcaseBusiness, MapPin } from "lucide-react";
 import { assets, infoList } from "@/assets/assets";
-
+import { Reveal } from "../components/ui/Reveal";
 import { Timeline } from "../components/ui/timeline";
 
 const About = () => {
@@ -13,15 +13,18 @@ const About = () => {
         className="scroll-mt-20 bg-zinc-50 py-20 sm:py-24"
       >
         <div className="mx-auto max-w-6xl px-5 lg:px-8">
-          <div className="mb-10 text-center">
+          <Reveal className="mb-10 text-center">
             <p className="section-kicker">INTRODUCTION</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
               About me
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid items-center gap-8 md:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-14">
-            <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-2xl border border-zinc-200 bg-white p-2 shadow-sm">
+            <Reveal
+              delay={0.06}
+              className="mx-auto w-full max-w-[280px] overflow-hidden rounded-2xl border border-zinc-200 bg-white p-2 shadow-sm"
+            >
               <Image
                 src={assets.profile_img_about}
                 alt="Ajay Shrestha"
@@ -38,20 +41,28 @@ const About = () => {
                   Bhaktapur, Nepal
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             <div className="space-y-7">
-              <p className="max-w-3xl text-base leading-7 text-zinc-600">
+              <Reveal
+                as="p"
+                delay={0.12}
+                className="max-w-3xl text-base leading-7 text-zinc-600"
+              >
                 Full Stack Developer and BCA graduate with hands-on experience
                 building and deploying modern web applications. I work across
                 responsive user interfaces, REST APIs, database integration,
                 and end-to-end features, with a focus on maintainable code and
                 practical solutions.
-              </p>
+              </Reveal>
 
               <section aria-labelledby="experience-heading">
                 <p className="section-kicker mb-3">EXPERIENCE</p>
-                <article className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+                <Reveal
+                  as="article"
+                  delay={0.18}
+                  className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6"
+                >
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                     <div className="flex items-start gap-3">
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-zinc-700">
@@ -90,7 +101,7 @@ const About = () => {
                       authentication.
                     </li>
                   </ul>
-                </article>
+                </Reveal>
               </section>
             </div>
           </div>

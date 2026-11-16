@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { Reveal } from "../components/ui/Reveal";
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -34,7 +35,7 @@ const Contact = () => {
       className="scroll-mt-20 bg-zinc-50 px-5 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-2xl">
-        <div className="mb-8 text-center">
+        <Reveal className="mb-8 text-center">
           <p className="section-kicker">CONNECT WITH ME</p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
             Get in touch
@@ -43,10 +44,12 @@ const Contact = () => {
             I&apos;d love to hear from you. Send me a message and I&apos;ll get
             back to you as soon as I can.
           </p>
-        </div>
+        </Reveal>
 
-        <form
+        <Reveal
+          as="form"
           onSubmit={onSubmit}
+          delay={0.08}
           className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-900/5 sm:p-7"
         >
           <div className="grid gap-3 sm:grid-cols-2">
@@ -106,7 +109,7 @@ const Contact = () => {
               </p>
             )}
           </div>
-        </form>
+        </Reveal>
       </div>
     </section>
   );

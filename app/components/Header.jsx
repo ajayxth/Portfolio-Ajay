@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Download,
   Mail,
 } from "lucide-react";
 import { assets } from "@/assets/assets";
+import { Reveal } from "./ui/Reveal";
 
 const socialLinks = [
   {
@@ -34,12 +34,7 @@ const Header = () => {
       className="hero-grid relative flex min-h-[100svh] scroll-mt-16 items-center justify-center overflow-hidden px-5 pb-16 pt-28 text-center"
     >
       <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-4"
-        >
+        <Reveal trigger="mount" className="mb-4">
           <Image
             src={assets.profile_img}
             alt="Ajay Shrestha"
@@ -47,31 +42,35 @@ const Header = () => {
             sizes="(min-width: 640px) 112px, 96px"
             className="h-24 w-24 rounded-full object-cover ring-4 ring-white shadow-lg shadow-zinc-900/10 sm:h-28 sm:w-28"
           />
-        </motion.div>
+        </Reveal>
 
-        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium tracking-wide text-emerald-800">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          Available for work
-        </span>
+        <Reveal trigger="mount" delay={0.06} className="mb-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium tracking-wide text-emerald-800">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            Available for work
+          </span>
+        </Reveal>
 
-        <p className="mb-3 rounded-full border border-zinc-200 bg-white/80 px-3 py-1 text-sm text-zinc-600 shadow-sm">
-          Full Stack Developer <span className="px-1 text-zinc-300">/</span>{" "}
-          Bhaktapur, Nepal
-        </p>
+        <Reveal trigger="mount" delay={0.12} className="mb-3">
+          <p className="rounded-full border border-zinc-200 bg-white/80 px-3 py-1 text-sm text-zinc-600 shadow-sm">
+            Full Stack Developer <span className="px-1 text-zinc-300">/</span>{" "}
+            Bhaktapur, Nepal
+          </p>
+        </Reveal>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.08 }}
+        <Reveal
+          as="h1"
+          trigger="mount"
+          delay={0.18}
           className="text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl md:text-6xl"
         >
           Fullstack Developer
-        </motion.h1>
+        </Reveal>
 
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.16 }}
+        <Reveal
+          as="p"
+          trigger="mount"
+          delay={0.24}
           className="mt-4 max-w-2xl text-base leading-7 text-zinc-600"
         >
           Full Stack Developer and BCA graduate with hands-on experience
@@ -79,9 +78,13 @@ const Header = () => {
           Node.js, Express, and MongoDB. Experienced in responsive interfaces,
           REST APIs, database integration, and end-to-end application
           development.
-        </motion.p>
+        </Reveal>
 
-        <div className="mt-7 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
+        <Reveal
+          trigger="mount"
+          delay={0.3}
+          className="mt-7 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row"
+        >
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-5 py-2.5 text-base font-medium text-white transition hover:bg-zinc-700"
@@ -97,9 +100,14 @@ const Header = () => {
             View resume
             <Download aria-hidden="true" size={15} />
           </a>
-        </div>
+        </Reveal>
 
-        <ul className="mt-6 flex items-center gap-5">
+        <Reveal
+          as="ul"
+          trigger="mount"
+          delay={0.36}
+          className="mt-6 flex items-center gap-5"
+        >
           {socialLinks.map(({ label, href, icon: Icon, image }) => (
             <li key={label}>
               <a
@@ -118,7 +126,7 @@ const Header = () => {
               </a>
             </li>
           ))}
-        </ul>
+        </Reveal>
       </div>
     </section>
   );

@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { skillData, toolsData } from "@/assets/assets";
+import { Reveal } from "../components/ui/Reveal";
 
 const Skills = () => {
   return (
     <section id="skills" className="scroll-mt-20 bg-zinc-50 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="text-center">
+        <Reveal className="text-center">
           <p className="section-kicker">TOOLS I USE</p>
           <ul className="mt-4 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white p-1.5 shadow-sm">
             {toolsData.map(({ name, icon }) => (
@@ -25,9 +26,9 @@ const Skills = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
-        <div className="mb-9 mt-14 text-center">
+        <Reveal delay={0.06} className="mb-9 mt-14 text-center">
           <p className="section-kicker">WHAT I DO</p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
             My Skills
@@ -36,12 +37,14 @@ const Skills = () => {
             Technologies and tools I use to build and deploy full-stack web
             applications.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {skillData.map(({ icon, title, description }) => (
-            <article
+          {skillData.map(({ icon, title, description }, index) => (
+            <Reveal
+              as="article"
               key={title}
+              delay={index * 0.06}
               className="group rounded-xl border border-zinc-200 bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md hover:shadow-zinc-900/5"
             >
               <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-200 bg-zinc-50">
@@ -60,7 +63,7 @@ const Skills = () => {
                   </li>
                 ))}
               </ul>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>
