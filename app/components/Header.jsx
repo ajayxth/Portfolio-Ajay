@@ -44,12 +44,12 @@ const Header = () => {
           />
         </Reveal>
 
-        <Reveal trigger="mount" delay={0.06} className="mb-4">
+        {/* <Reveal trigger="mount" delay={0.06} className="mb-4">
           <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium tracking-wide text-emerald-800">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
             Available for work
           </span>
-        </Reveal>
+        </Reveal> */}
 
         <Reveal trigger="mount" delay={0.12} className="mb-3">
           <p className="rounded-full border border-zinc-200 bg-white/80 px-3 py-1 text-sm text-zinc-600 shadow-sm">
