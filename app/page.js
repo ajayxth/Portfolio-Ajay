@@ -6,7 +6,7 @@ import Contact from "./contact/page";
 
 
 // Replace this with your actual deployed portfolio URL.
-const SITE_URL = "https://ajaysthportfolio.netlify.app/";
+const SITE_URL = "https://ajaysthportfolio.netlify.app";
 
 export const metadata = {
   title: "Ajay Shrestha | Full Stack Developer",
@@ -31,7 +31,7 @@ const structuredData = {
       url: SITE_URL,
       jobTitle: "Aspiring Full Stack Developer",
       description:
-        "BCA student interested in full-stack web development and building modern web applications.",
+        "BCA graduate interested in full-stack web development and building modern web applications.",
       knowsAbout: [
         "JavaScript",
         "TypeScript",
@@ -45,6 +45,7 @@ const structuredData = {
       ],
       sameAs: [
         "https://github.com/ajayxth",
+        "https://www.linkedin.com/in/ajay-shrestha-28bb462aa",
       ],
     },
     {
