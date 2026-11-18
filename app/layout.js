@@ -12,8 +12,13 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "",
+  title: "Ajay Shrestha | Full Stack Developer",
+  description:
+    "Explore the portfolio of Ajay Shrestha, a Full Stack Developer specializing in React, Next.js, and the MERN stack.",
+
+  verification: {
+    google: "ys6Qg6DM6XIYgX",
+  },
 };
 
 export default function RootLayout({ children }) {
